@@ -1,0 +1,23 @@
+{{#services}}
+
+{{domain}}:443 {
+   proxy / http://drunner-{{name}}:80 {
+		transparent
+		header_upstream Host {host}
+		header_upstream X-Real-IP {remote}
+		header_upstream X-Forwarded-For {host}
+		header_upstream X-Forwarded-Proto {scheme}
+   }
+   gzip
+
+   {{#fake}}
+   tls self_signed
+   {{/fake}}
+
+   {{#production}}
+   tls {{email}}
+   {{/production}}
+
+}
+
+{{/services}}

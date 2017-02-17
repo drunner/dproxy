@@ -13,6 +13,10 @@ RUN npm install -g mustache
 COPY bin/* /bin/
 RUN chmod a+x /bin/*
 
+RUN mkdir /caddy /data
+COPY caddy/* /caddy/
+COPY data/* /data/
+
 VOLUME ["/data"]
 
 # https://github.com/krallin/tini

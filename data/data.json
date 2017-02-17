@@ -1,0 +1,9 @@
+{
+ "email" : "j@842.be",
+ "services" : [
+    { "name": "rc-tracmap", "domain":"tracmap.life", "production" : true },
+    { "name": "alpineretreat", "domain" : "alpineretreat.co.nz" , "production" : true },
+    { "name": "rc-ar","domain" : "rocketchat.alpineretreat.co.nz", "fake": true }
+ ]
+
+}
