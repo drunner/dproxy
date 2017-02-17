@@ -2,7 +2,7 @@
 
 echo "Whee!"
 
-mustache /data/data.json /caddy/template.mustache /etc/Caddyfile
+mustache /data/data.json /etc/caddyfile.mustache /etc/caddyfile
 
-cat /etc/Caddyfile
+cat /etc/caddyfile
 
