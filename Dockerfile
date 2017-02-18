@@ -18,6 +18,6 @@ VOLUME ["/data"]
 ENTRYPOINT ["/sbin/tini","--"]
 ENV PATH /bin:/usr/bin:$PATH
 
-CMD ["caddy", "-quic", "-restart=inproc", "--conf", "/data/caddyfile"]
+CMD ["caddy", "-quic", "--conf", "/data/caddyfile"]
 
 # add on  -ca "https://acme-staging.api.letsencrypt.org/directory"  for staging
