@@ -18,6 +18,8 @@ VOLUME ["/data"]
 ENTRYPOINT ["/sbin/tini","--"]
 ENV PATH /bin:/usr/bin:$PATH
 
+#-- enabling http2 makes rocket.chat flakey with caddy. :/
+
 CMD ["caddy", "-quic", "-http2=false", "--conf", "/data/caddyfile"]
 
 # add on  -ca "https://acme-staging.api.letsencrypt.org/directory"  for staging
