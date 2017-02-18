@@ -1,3 +1,5 @@
+# based on https://github.com/ZZROTDesign/alpine-caddy
+
 FROM alpine:edge
 MAINTAINER j842
 
@@ -24,5 +26,5 @@ COPY data/* /data/
 ENTRYPOINT ["/sbin/tini","--"]
 ENV PATH /bin:/usr/bin:$PATH
 
-CMD ["caddy", "-quic", "--conf", "/etc/caddyfile"]
+CMD ["caddy", "-quic", "-restart=inproc", "--conf", "/etc/caddyfile"]
 #CMD ["mustache","data.json","template.mustache",">","output"]
