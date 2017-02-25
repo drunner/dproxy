@@ -11,6 +11,7 @@ RUN curl "https://caddyserver.com/download/build?os=linux&arch=amd64&features=DN
     | tar --no-same-owner -C /usr/bin/ -xz caddy
 
 VOLUME ["/data"]
+VOLUME ["/root/.caddy"]
 
 # https://github.com/krallin/tini
 # allows signals to be sent to process :-)
